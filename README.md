@@ -16,7 +16,7 @@ See the manual in [notebook](lisp-lazy-seq.ipynb) or
 Functions for creating sequences include `lazy-seq`, `lazy-list`,
 `cycle`, `iterate`, `repeat`, `repeatedly`, `range` and `lazy-sort`. 
 
-Functions for operating on lazy sequences include `maps`, `filters`,
+Functions for operating on lazy sequences include `maps`, `zip`, `filters`,
 `reductions`, `lazy-cat`.
 
 Functions which evaluate lazy sequences include `seq-elt`, `take`, `take-while`, 

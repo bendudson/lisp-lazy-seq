@@ -40,6 +40,7 @@
    #:maps
    #:filters
    #:scanl
+   #:zip
    ;; reductions
    #:reduces
    #:reductions

@@ -98,5 +98,31 @@
  (take 10 (scanl #'+ 1 '(1 2 3)))
  => '(1 2 4 7))
 
+(defun zip (s &rest seqs)
+  "Makes a sequence of lists, each containing the element
+from the input sequence at the same position.
+This can operate on infinite (lazy) sequences
 
+Examples:
+  (zip (range) '(1 2 3)) => ((0 1) (1 2) (2 3))
 
+  (zip (range) \"hello\")
+  => ((0 #\h) (1 #\e) (2 #\l) (3 #\l) (4 #\o))
+
+  (take 5 (zip (range) (range 2)))
+  => ((0 2) (1 3) (2 4) (3 5) (4 6))
+
+"
+  (apply #'maps #'list s seqs))
+
+(example
+ (zip (range) '(1 2 3))
+ => '((0 1) (1 2) (2 3)))
+
+(example
+ (zip (range) \"hello\")
+ => '((0 #\h) (1 #\e) (2 #\l) (3 #\l) (4 #\o)))
+
+(example
+ (take 5 (zip (range) (range 2)))
+ => '((0 2) (1 3) (2 4) (3 5) (4 6)))
